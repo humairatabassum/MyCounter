@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnStart, btnReset, btnPause, btnExit;
     boolean runApp = false;
     boolean pause = false;
-    private int counterId = 2019160243;
+    private int counterId = 0;
 
 
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                counterId = 2019160243;
+                counterId = 0;
                 textId.setText(String.valueOf(counterId));
                 runApp = false;
             }
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         protected Integer doInBackground(Boolean... booleans) {
             while (runApp) {
                 if (pause == false) {
-                    counterId--;
+                    counterId++;
                     publishProgress(counterId);
                     try {
                         Thread.sleep(100);
